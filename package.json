@@ -1,0 +1,33 @@
+{
+  "name": "ptjs",
+  "version": "1.0.0",
+  "description": "patinoire back-end server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "nyc --reporter=html --reporter=text mocha --exit"
+  },
+  "author": "Deep Dhanak",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.1",
+    "express": "^4.16.2",
+    "express-jwt": "^5.3.0",
+    "express-jwt-authz": "^1.0.0",
+    "helmet": "^3.9.0",
+    "jwks-rsa": "^1.2.1",
+    "node-schedule": "^1.3.0",
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "mocha": "^5.0.0",
+    "mock-fs": "^4.4.2",
+    "nodemon": "^1.14.11",
+    "nyc": "^11.4.1",
+    "sinon": "^4.2.2"
+  }
+}

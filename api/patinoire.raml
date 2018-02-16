@@ -1,0 +1,39 @@
+#%RAML 1.0
+---
+title: patinoire API
+baseUri: http://208.75.75.89/api/{version}
+version: v1
+
+/patinoires:
+  get:
+    description: Retrieve the status for all the rinks
+    queryParameters:
+      condition:
+        displayName: Condition
+        type: string
+        description: Filters the rinks with the condition of the ice
+        example: Excellente
+        required: false
+      ouvert:
+        displayName: Ouvert
+        type: integer
+        description: Filters the rinks with only the open/closed rinks
+        example: 1
+        required: false
+      arrondissement:
+        displayName: Arrondissement
+        type: string
+        description: Filters the rinks with only the chosen neighbourhood
+        example: LaSalle
+        required: false
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+            [{"nom":"Patinoire avec bandes, de Mésy (PSE)","arrondissement":{"nom_arr":"Ahuntsic - Cartierville","cle":"ahc","date_maj":"2018-02-15 08:13:55"},"ouvert":"1","deblaye":"1","arrose":"1","resurface":"1","condition":"Excellente"},{"nom":"Patinoire avec bandes, de Mésy (PSE)","arrondissement":{"nom_arr":"Ahuntsic - Cartierville","cle":"ahc","date_maj":"2018-02-15 08:13:55"},"ouvert":"1","deblaye":"1","arrose":"1","resurface":"1","condition":"Excellente"},{"nom":"Patinoire Bleu Blanc Bouge du parc Hayward (PSE)","arrondissement":{"nom_arr":"LaSalle","cle":"lsl","date_maj":"2018-02-15 11:12:54"},"ouvert":"1","deblaye":"1","arrose":"1","resurface":"1","condition":"Excellente"},{"nom":"Patinoire Bleu Blanc Bouge, Parc Willibrord (PSE)","arrondissement":{"nom_arr":"Verdun","cle":"ver","date_maj":"2018-02-15 08:54:31"},"ouvert":"1","deblaye":"1","arrose":"1","resurface":"1","condition":"Excellente"},{"nom":"Patinoire Bleu-Blanc-Bouge, Parc Confédération (PSE)","arrondissement":{"nom_arr":"Côte-des-Neiges - Notre-Dame-de-Grâce","cle":"cdn","date_maj":"2018-02-15 08:51:32"},"ouvert":"1","deblaye":"1","arrose":"1","resurface":"1","condition":"Excellente"}]
+      404:
+        body:
+          application/json:
+            example: |
+              {"message": "Requested information not found"}
