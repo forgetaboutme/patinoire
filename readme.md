@@ -1,5 +1,5 @@
 # PatinoireMTL API
-server-side web API for patinoiremtl.herokuapp.com
+Web API for patinoiremtl.herokuapp.com
 
 # To run:
 - ```npm install```
